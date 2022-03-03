@@ -32,7 +32,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Transbank\\": "libs/transbank-sdk-php/src/"
+            "Transbank\\": "app/Transbank/"
         },
         "classmap": [
             "database/seeds",
