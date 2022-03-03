@@ -31,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Transbank\\Portal\\": "libs/transbank-sdk-php/src/"
         },
         "classmap": [
             "database/seeds",
-            "database/factories",
-            "libs/transbank-sdk-php"
+            "database/factories"
         ]
     },
     "autoload-dev": {
