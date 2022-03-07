@@ -71,7 +71,7 @@ class HttpClient implements HttpClientInterface
             'headers' => $headers,
             'body'    => $payload,
             'curl.options' => array(
-                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2,
+                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_0,
                 CURLOPT_SSL_CIPHER_LIST => 'TLSv1'
             )
         ]);
@@ -96,7 +96,7 @@ class HttpClient implements HttpClientInterface
         $client = new Client([
             'http_errors' => false,
             'curl.options' => array(
-                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2,
+                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_0,
                 CURLOPT_SSL_CIPHER_LIST => 'TLSv1'
             )
         ]);
