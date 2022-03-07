@@ -101,7 +101,7 @@ class HttpClient implements HttpClientInterface
             'verify' => false,
             'curl.options' => array(
                 CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_0,
-                CURLOPT_SSL_CIPHER_LIST => 'AES256-SHA',
+                CURLOPT_SSL_CIPHER_LIST => 'DEFAULT@SECLEVEL=1',
                 CURLOPT_SSL_VERIFYHOST => false,
                 CURLOPT_SSL_VERIFYPEER => false
             )
