@@ -91,8 +91,8 @@ class HttpClient implements HttpClientInterface
         $client = new Client([
             'http_errors' => false,
             'curl.options' => array(
-                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_0,
-                CURLOPT_SSL_CIPHER_LIST => 'TLSv1'
+                CURLOPT_SSLVERSION => CURL_SSLVERSION_SSLv3,
+                CURLOPT_SSL_CIPHER_LIST => 'SSLv3'
             )
         ]);
 
