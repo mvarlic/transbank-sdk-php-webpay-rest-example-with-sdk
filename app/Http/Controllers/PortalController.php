@@ -31,7 +31,7 @@ class PortalController extends Controller
         ];
         return view('portal/online-result', ["res" => $res['data'], 'req' => $params]);
         */
-        curl_setopt($this->curlHandle, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
+
         try {
             $r = $req->json()->all();
             $res = (new Sales)->online($r["fechaDesde"], $r["fechaHasta"], $r["identificadorTransaccion"], $r["commerceCodes"], $r["tipoTarjeta"], $r["tipoVenta"]);
@@ -46,7 +46,6 @@ class PortalController extends Controller
 
     public function totals(Request $req)
     {
-        curl_setopt($this->curlHandle, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
         /*
         $res = array();
         $res = (new Sales)->totals($req["fechaDesde"], $req["fechaHasta"], $req["commerceCodes"]);
@@ -81,7 +80,7 @@ class PortalController extends Controller
         ];
         return view('portal/result', ["res" => $res, 'req' => $params]);
         */
-        curl_setopt($this->curlHandle, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
+
         try {
             $r = $req->json()->all();
             $res = (new Sales)->history($r["fechaDesde"], $r["fechaHasta"], $r["commerceCodes"]);
@@ -106,7 +105,7 @@ class PortalController extends Controller
         ];
         return view('portal/result', ["res" => $res, 'req' => $params]);*/
 
-        curl_setopt($this->curlHandle, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
+
         try {
             $r = $req->json()->all();
             $res = (new Sales)->summaryPerDay($r["fechaDesde"], $r["fechaHasta"], $r["commerceCodes"]);
@@ -128,7 +127,6 @@ class PortalController extends Controller
 
     public function byAccounts(Request $req)
     {
-        curl_setopt($this->curlHandle, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
         try {
             $r = $req->json()->all();
             $res = (new Payments)->byAccounts($r["fechaDesde"], $r["fechaHasta"]);
@@ -143,7 +141,6 @@ class PortalController extends Controller
 
     public function salesForPayments(Request $req)
     {
-        curl_setopt($this->curlHandle, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
         try {
             $r = $req->json()->all();
             $res = (new Payments)->salesForPayments($r["fechaAbono"], $r["identificadorTransaccion"], $r["commerceCodes"]);
@@ -158,7 +155,6 @@ class PortalController extends Controller
 
     public function upcoming(Request $req)
     {
-        curl_setopt($this->curlHandle, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
         try {
             $r = $req->json()->all();
             $res = (new Payments)->upcoming($r["fechaDesde"], $r["fechaHasta"]);
@@ -173,7 +169,6 @@ class PortalController extends Controller
 
     public function completed(Request $req)
     {
-        curl_setopt($this->curlHandle, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
         try {
             $r = $req->json()->all();
             $res = (new Payments)->completed($r["fechaAbono"]);
