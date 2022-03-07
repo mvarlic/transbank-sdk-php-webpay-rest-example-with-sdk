@@ -71,6 +71,7 @@ class HttpClient implements HttpClientInterface
             'body'    => $payload,
         ]);
 
+        $request->getCurlOptions()->set(CURLOPT_SSL_VERIFYHOST, false);
         return $client->send($request);
     }
 
@@ -90,6 +91,10 @@ class HttpClient implements HttpClientInterface
 
         $client = new Client(['http_errors' => false]);
 
+        $request->getCurlOptions()->set(CURLOPT_SSL_VERIFYHOST, false);
+
         return $client->send($request);
     }
 }
+//$req= $client->createRequest($method, $baseUrl.$endpoint, $payload, ['headers' => $headers]);
+        //$response = $client->send($req);

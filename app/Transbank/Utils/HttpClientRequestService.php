@@ -74,9 +74,7 @@ class HttpClientRequestService implements RequestService
         $request = new TransbankApiRequest($method, $baseUrl, $endpoint, $payload, $headers);
 
         $this->setLastRequest($request);
-        //$response = $client->request($method, $baseUrl.$endpoint, $payload, ['headers' => $headers]);
-        $req= $client->createRequest($method, $baseUrl.$endpoint, $payload, ['headers' => $headers]);
-        $response = $client->send($req);
+        $response = $client->request($method, $baseUrl.$endpoint, $payload, ['headers' => $headers]);
 
         $this->setLastResponse($response);
         $responseStatusCode = $response->getStatusCode();
