@@ -70,7 +70,7 @@ class HttpClient implements HttpClientInterface
         $request = $client->createRequest($method, $url, [
             'headers' => $headers,
             'body'    => $payload,
-            'verify' => false,
+            //'verify' => false,
             'curl.options' => array(
                 CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_0,
                 CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
