@@ -64,6 +64,7 @@ class HttpClient implements HttpClientInterface
      */
     protected function sendGuzzle5Request($method, $url, array $headers, $payload)
     {
+        //https://www.imlc.me/dh-key-too-small/
         $client = new Client();
 
         $request = $client->createRequest($method, $url, [
