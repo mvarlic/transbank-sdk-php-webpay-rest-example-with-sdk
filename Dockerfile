@@ -1,5 +1,5 @@
 FROM php:7.4-apache-buster
-RUN apt-get update && apt-get install -y zip unzip zlib1g-dev wget libzip-dev
+RUN apt-get update && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev libmcrypt-dev openssl zip unzip git nodejs npm vim nano && docker-php-ext-install pdo_mysql mysqli gd iconv
 RUN docker-php-ext-install zip
 RUN mkdir -p /app
 WORKDIR /app
