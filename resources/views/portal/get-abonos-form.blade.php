@@ -102,7 +102,9 @@
                 <button class="btn btn-primary me-md-2" type="button" onclick="enviar()">Ejecutar</button>
             </div>
             <br/>
-            <div id="divResult"></div>
+            <div class="border shadow-none p-3 mb-5 bg-light rounded">
+                <div id="divResult"></div>
+            </div>
 
         </div>
     </div>
